@@ -73,10 +73,15 @@ public class GreetingsController {
     
     @PutMapping(value = "atualizar")
     @ResponseBody
-    public ResponseEntity<Usuario> atualizar(@RequestBody Usuario usuario){ 
+    public ResponseEntity<?> atualizar(@RequestBody Usuario usuario){
+
+        if((usuario.getId()) == 0){
+            return new ResponseEntity<String>("Id não foi informado", HttpStatus.OK);
+        }
+
     	Usuario user = usuarioRepository.saveAndFlush(usuario);
     	
-    	return new ResponseEntity<Usuario>(user, HttpStatus.CREATED);
+    	return new ResponseEntity<Usuario>(user, HttpStatus.OK);
     }
     
     @DeleteMapping(value = "delete") 
@@ -94,4 +99,13 @@ public class GreetingsController {
     	
     	return new ResponseEntity<Usuario>(user, HttpStatus.OK);
     }
+
+    @GetMapping(value = "buscarpornome")
+    @ResponseBody
+    public ResponseEntity<List<Usuario>> buscarPorNome(@RequestParam(name = "name") String name){
+        List<Usuario> user = usuarioRepository.buscarPorNome(name.trim().toUpperCase());
+
+        return new ResponseEntity<List<Usuario>>(user, HttpStatus.OK);
+    }
+
 }

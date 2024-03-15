@@ -9,18 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity //uma entidade representa uma tabela no banco de dados, e cada instância representa uma linha dessa tabela
-@SequenceGenerator(name = "Seq_usuario", sequenceName = "seq_usuario", allocationSize = 1, initialValue = 1) //gerador de sequência
+@SequenceGenerator(name = "seq_usuario", sequenceName = "seq_usuario", allocationSize = 1, initialValue = 1) //gerador de sequência
 public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L; //implementacao da versão serial para controle
 
 	@Id //chave primaria
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario") //apontando pro gerador
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //apontando pro gerador
 	private long id;
 	private String nome;
 	private int idade;
-	
-	
+
+	// @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario") nao funciona
 	public long getId() {
 		return id;
 	}
