@@ -10,23 +10,16 @@
 
     <title>Spring Boot Rest API Crud</title>
 
-    <style>
-        html{
-            margin-top: 5%;
-            margin-left: 5%;
-            margin-right: 5%;
-        }
-
-        body{
-            background-color: AliceBlue;
-
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 </head>
 <body>
 
-<h3>CRUD Usuários</h3>
+<div class="container-fluid">
+    <div id="h1">
+    <h1>CRUD Usuários (Java + Spring Boot + PostgreSQL + Rest API)</h1>
+    </div>
+</div>
+
 
 <form id="formCadastroUser">
 
@@ -46,7 +39,7 @@
     </div>
 </form>
 
-
+<div class="buttons">
 <button type="submit" class="btn btn-success" onclick="salvarUsuario()">Salvar</button>
 
 <button type="button" class="btn btn-primary" onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
@@ -54,7 +47,7 @@
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPesquisaUser">Pesquisar</button>
 
 <button type="button" class="btn btn-danger" onclick="botaoExcluirTela()">Excluir</button>
-
+</div>
 
 
 <div class="modal fade" id="modalPesquisaUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,10 +62,10 @@
 
             <div class="modal-body">
 
-                <form>
-                    <div class="form-group">
+                <form >
+                    <div class="form-group" >
                         <label for="nameBusca" class="col-form-label">Informe o nome:</label>
-                        <input type="text" class="form-control" id="nameBusca">
+                        <input type="text" class="form-control" id="nameBusca" placeholder="Procurar...">
                     </div>
 
                     <button type="button" class="btn btn-outline-primary" onclick="pesquisaUser()">Pesquisar</button>
@@ -113,4 +106,14 @@
 
 <script type="text/javascript" src="functions.js"></script>
 </body>
+
+<footer>
+    <p>Feito e editado por João Vitor Silva</p>
+    <nav>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/jvosilva/"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="jvosilva" height="30" width="40" /></a></li>
+            <li><a href="https://github.com/jvitsilva"><img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Github-Dark.svg" alt="jvitsilva" height="40" width="40"></a></li>
+        </ul>
+    </nav>
+</footer>
 </html>

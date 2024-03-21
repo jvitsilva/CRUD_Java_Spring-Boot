@@ -1,0 +1,84 @@
+
+body{
+    background-color: #e2eee6;
+
+}
+
+.container-fluid{
+
+    background-color: #09fd64;
+    display: flex;
+    width: 100vw;
+    min-height: 5vw;
+    font-family: "Agency FB";
+    align-items: center;
+
+
+}
+
+#h1{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#formCadastroUser{
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.buttons{
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+#nameBusca {
+
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: black;
+    width: 90%;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+
+footer {
+
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
