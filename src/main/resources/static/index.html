@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Spring Boot Rest API Crud</title>
+
+    <style>
+        html{
+            margin-top: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        body{
+            background-color: AliceBlue;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<h3>CRUD Usuários</h3>
+
+<form id="formCadastroUser">
+
+    <div class="mb-3">
+        <label for="idForm" class="form-label" color="">Id</label>
+        <input type="text" class="form-control" id="idForm" readonly="readonly">
+    </div>
+
+    <div class="mb-3">
+        <label for="nameForm" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nameForm" placeholder="Digite o nome" required="required">
+    </div>
+
+    <div class="mb-3">
+        <label for="ageForm" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="ageForm" placeholder="Digite a idade">
+    </div>
+</form>
+
+
+<button type="submit" class="btn btn-success" onclick="salvarUsuario()">Salvar</button>
+
+<button type="button" class="btn btn-primary" onclick="document.getElementById('formCadastroUser').reset();">Novo</button>
+
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modalPesquisaUser">Pesquisar</button>
+
+<button type="button" class="btn btn-danger" onclick="botaoExcluirTela()">Excluir</button>
+
+
+
+<div class="modal fade" id="modalPesquisaUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pesquisa de usuário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <form>
+                    <div class="form-group">
+                        <label for="nameBusca" class="col-form-label">Informe o nome:</label>
+                        <input type="text" class="form-control" id="nameBusca">
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary" onclick="pesquisaUser()">Pesquisar</button>
+                    <button type="button" class="btn btn-outline-primary" onclick="listarTodos()">Listar todos</button>
+                </form>
+
+                <br>
+
+                <div style="height: 300px; overflow: scroll" >
+                    <table class="table" id="tabelaResultados">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Excluir</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="functions.js"></script>
+</body>
+</html>

@@ -33,14 +33,15 @@ public class GreetingsController {
 	
     /**
      *
-     * @param name the name to greet
+     * @param /name the name to greet
      * @return greeting text
-     */
+    */
+    /*
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String greetingText(@PathVariable String name) {
         return "Hello " + name + "!";
-    }
+    } */
     
     @RequestMapping(value = "/olamundo/{nome}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
@@ -67,7 +68,7 @@ public class GreetingsController {
     @ResponseBody //descricao da resposta
     public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario){ //recebe os dados para salvar
     	Usuario user = usuarioRepository.save(usuario);
-    	
+
     	return new ResponseEntity<Usuario>(user, HttpStatus.CREATED);
     }
     

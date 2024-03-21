@@ -16,12 +16,12 @@ public class Usuario implements Serializable{
 
 	@Id //chave primaria
 
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //apontando pro gerador
+	 @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "seq_usuario") //apontando pro gerador
 	private long id;
 	private String nome;
 	private int idade;
 
-	// @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_usuario") nao funciona
+
 	public long getId() {
 		return id;
 	}
